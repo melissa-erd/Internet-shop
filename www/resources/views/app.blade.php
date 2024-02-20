@@ -6,12 +6,34 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+    </head>
 <body>
-
+<div class="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <img class="logo" src="./images/logo.png" alt="">
+                </li>
+            </ul>
+            <ul class="nav-ul">
+                <li><a class="nav-a" href="#">About us</a></li>
+                <li><a class="nav-a" href="#">Afisha</a></li>
+                <li><a class="nav-a" href="#">Where are we?</a></li>
+            </ul>
+            <ul class="nav-ul">
+                <li>
+                    <button class="button"><a class="button-a" href="/login">Login</a></button>
+                </li>
+                <li>
+                    <button class="button"><a class="button-a" href="/registration">Registration</a></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 @section('content')
 @show
+</div>
 </body>
 </html>

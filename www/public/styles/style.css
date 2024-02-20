@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url("../fonts/trueno-font/Trueno-wml2.otf");
+}
+@font-face {
+
+}
+body {
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-color: #dbf2f5;
+}
+
+.logo {
+    width: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #a30000ff;
+    text-decoration: none;
+}
+
+.nav-ul {
+    display: flex;
+    gap: 50px;
+    font-family: Trueno;
+    align-items: center;
+    font-size: 17px;
+}
+
+.button {
+    background: #a30000;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.button-a {
+    color: #dbf2f5;
+    font-size: 17px;
+    font-family: Trueno;
+}
+
+.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Trueno;
+    font-size: 28px;
+    gap: 30px;
+}
+
+.container-form {
+    width: 500px;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

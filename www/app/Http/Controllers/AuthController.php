@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AuthController extends Controller
@@ -24,11 +25,11 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
+            'patronymic' => 'required',
             'login' => 'required',
             'email' => 'required',
             'password' => 'required',
             'password_repeat' => 'required',
-            'rules' => 'accepted'
         ]);
         User::query()->create([
             'name'=>$request->name,
@@ -38,8 +39,23 @@ class AuthController extends Controller
             'email'=>$request->email,
             'password'=>$request->password,
             'password_repeat'=>$request->password_repeat,
-            'rules'=>$request->rules,
         ]);
         return redirect()->route('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        if(Auth::attempt([
+            'login'=>$request->login,
+            'password'=>$request->password
+        ])) {
+        $request->session()->regenerate();
+        $user = Auth::user();
+        if($request->user()-> isAdmin == 1){
+            return redirect()->route('admin.index');
+        }
+        return redirect()->route('profile', compact('user'));
+    }
+        return redirect()->route('auth.registration');
     }
 }

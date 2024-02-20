@@ -4,7 +4,7 @@
 
     <h1>Login</h1>
 
-    <form action="" method="post">
+    <form action="{{ route('auth.login') }}" method="post">
         @csrf
         <input type="text" name="login" placeholder="login">
         <input type="password" name="password" placeholder="password">

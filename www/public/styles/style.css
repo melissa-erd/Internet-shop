@@ -55,6 +55,9 @@ a {
     border: none;
     padding: 10px;
     border-radius: 7px;
+    color: #dbf2f5;
+    font-size: 17px;
+    font-family: Trueno;
     cursor: pointer;
 }
 
@@ -64,12 +67,22 @@ a {
     font-family: Trueno;
 }
 
+.background {
+    text-align: center;
+    width: 500px;
+    height: 680px;
+    background-color: #dbf2f5;
+    border-radius: 15px;
+    padding: 50px;
+}
+
 .registration {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 60px;
     font-family: Trueno;
     font-size: 28px;
     gap: 30px;
@@ -77,10 +90,24 @@ a {
 
 .container-form {
     width: 500px;
+    margin-top: 50px;
 }
 
 .form-register {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 30px;
+}
+
+.input {
+    border-radius: 7px;
+    border: 2px solid #d5d5d5;
+    width: 350px;
+    padding: 10px;
+}
+
+.p-checkbox {
+    font-family: Trueno;
+    font-size: 17px;
 }

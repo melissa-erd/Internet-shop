@@ -55,6 +55,7 @@ a {
     border: none;
     padding: 10px;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .button-a {

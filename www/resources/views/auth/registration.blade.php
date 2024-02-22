@@ -14,7 +14,8 @@
             <input type="email" name="email" placeholder="email">
             <input type="password" name="password" placeholder="password">
             <input type="password" name="password_repeat" placeholder="password_repeat">
-            <input type="checkbox" name="rules">
+            <label for="rules">Sure</label>
+            <input type="checkbox" id="rules" name="rules" required>
             <input type="submit">
         </form>
     </div>

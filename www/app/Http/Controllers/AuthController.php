@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class AuthController extends Controller
@@ -25,11 +26,10 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'patronymic' => 'required',
             'login' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'password_repeat' => 'required',
+            'password_repeat' => 'required'
         ]);
         User::query()->create([
             'name'=>$request->name,
@@ -37,8 +37,8 @@ class AuthController extends Controller
             'patronymic'=>$request->patronymic,
             'login'=>$request->login,
             'email'=>$request->email,
-            'password'=>$request->password,
-            'password_repeat'=>$request->password_repeat,
+            'password'=>Hash::make($request->password),
+            'password_repeat'=>Hash::make($request->password_repeat),
         ]);
         return redirect()->route('auth.login');
     }
@@ -57,5 +57,13 @@ class AuthController extends Controller
         return redirect()->route('profile', compact('user'));
     }
         return redirect()->route('auth.registration');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('auth.login');
     }
 }

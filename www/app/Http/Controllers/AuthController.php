@@ -54,7 +54,7 @@ class AuthController extends Controller
         if($request->user()-> isAdmin == 1){
             return redirect()->route('admin.index');
         }
-        return redirect()->route('profile', compact('user'));
+        return redirect()->route('index', compact('user'));
     }
         return redirect()->route('auth.registration');
     }
@@ -64,6 +64,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('auth.login');
+        return redirect()->route('index');
     }
 }

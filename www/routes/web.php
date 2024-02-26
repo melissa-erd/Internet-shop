@@ -19,11 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/registration', [AuthController::class, 'registerPage']);
 Route::get('/login', [AuthController::class, 'loginPage']);
 Route::post('/registration', [AuthController::class, 'registration'])->name('auth.registration');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -41,4 +42,5 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 Route::get('/users/{user}', [UserController::class, 'index'])->name('profile');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/all-productions', [MainController::class, 'productions'])->name('productions');
+
